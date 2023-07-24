@@ -1,0 +1,57 @@
+ALGORITHME phraseMalipulation ; 
+
+VAR 
+
+phrase : STRING ; 
+
+j : ENTIER : = 0 ; 
+
+i : ENTIER : = 1 ; 
+
+cptVoyelle : ENTIER :=0 ; 
+
+cptCaractère : INTEGER :=0 ; 
+
+cptMot : ENTIER : = 1 ; 
+
+point: CHAR:='.'; 
+
+espace: CHAR:=' '; 
+
+tabVoyelle : ARRAY_OF CHAR[6] ; 
+
+COMMENCER 
+
+tabVoyelle :={'a','e','i','o','u','y'} 
+
+LIRE(phrase); 
+
+TANT QUE (phrase[i]<>point) FAIRE 
+
+cptCaractere:=cptCaractere+1; 
+
+SI (phrase[i]==espace) ALORS 
+
+cptMot :=cptMot+1 ; 
+
+FIN SI 
+
+POUR j DE 0 À 5 PAS 1 FAIRE 
+
+SI (phrase[i]==tabVoyelle[j]) ALORS 
+
+cptVoyelle:=cptVoyelle+1; 
+
+FIN SI 
+
+END_FOR 
+
+END_WHILE 
+
+WRITE("Dans cette phrase, nous sommes ",cptCaractere," caractères"); 
+
+WRITE("Dans cette phrase, nous sommes ",cptMot,"mots"); 
+
+WRITE("Dans cette phrase, nous sommes ",cptVoyelle," voyelles"); 
+
+FIN
